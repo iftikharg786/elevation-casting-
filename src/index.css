@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-oscar-espresso: #140603;
+  --color-oscar-cocoa: #381707;
+  --color-oscar-bronze: #70340B;
+  --color-oscar-amber: #AA5A0F;
+  --color-oscar-gold: #DB951E;
+  --color-oscar-softgold: #F0C85F;
+  --color-oscar-headline: #F5E6CD;
+  --color-oscar-body: #D9C2A0;
+  --color-oscar-black: #000000;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+body {
+  background-color: var(--color-oscar-black);
+  color: var(--color-oscar-body);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-oscar-headline);
+}
+
+.bg-glow-center {
+  background: radial-gradient(circle at 50% 50%, var(--color-oscar-cocoa) 0%, var(--color-oscar-black) 80%);
+}
+
+.bg-glow-top-right {
+  background: radial-gradient(circle at 100% 0%, var(--color-oscar-bronze) 0%, var(--color-oscar-espresso) 70%, var(--color-oscar-black) 100%);
+}
+
+.bg-glow-bottom-left {
+  background: radial-gradient(circle at 0% 100%, var(--color-oscar-cocoa) 0%, var(--color-oscar-black) 70%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, var(--color-oscar-softgold), var(--color-oscar-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-oscar-gold to-oscar-amber text-oscar-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(219,149,30,0.4)] hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-transparent border border-oscar-gold text-oscar-softgold font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-oscar-gold/10;
+}
